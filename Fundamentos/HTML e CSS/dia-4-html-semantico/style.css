@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#header{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: green;
+    text-align: center;
+    text-decoration: underline;
+}
+ul li{
+    display: inline-block;
+    background-color: red;
+    margin-left: 40px;
+    padding: 10px;
+    font-size: 15px;
+    align-items: center;
+    
+}
+#nav-links{
+    background-color: lightgreen;
+    margin: ;
+}
+ul li:hover{
+    color: aqua;
+}
