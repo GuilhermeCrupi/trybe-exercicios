@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //1
+      let elementoH1 = document.createElement('h1');
+      elementoH1.innerText = 'Exercício 5.2 - JavaScript DOM';
+      document.body.appendChild(elementoH1);
+      //2
+      let elementoMain = document.createElement('main');
+      elementoMain.className = 'main-content';
+      document.body.appendChild(elementoMain);
+      //3
+      let elementoSection = document.createElement('section');
+      elementoSection.className = 'center-content';
+      elementoMain.appendChild(elementoSection);
+      //4
+      let textoSection = document.createElement('p');
+      textoSection.innerText = 'Só texto TOP! #VQV';
+      elementoSection.appendChild(textoSection);
+      //5
+      let elementoSection2 = document.createElement('section');
+      elementoSection2.className = 'left-content';
+      elementoMain.appendChild(elementoSection2);
+      //6
+      let elementoSection3 = document.createElement('section');
+      elementoSection3.className = 'right-content';
+      elementoMain.appendChild(elementoSection3);
+      //7
+      let imagem = document.createElement('img');
+      imagem.className = 'small-image';
+      imagem.src = 'https://picsum.photos/200';
+      elementoSection2.appendChild(imagem);
+      //8
+      let listaNaoOrdenada = document.createElement('ul');
+      elementoSection3.appendChild(listaNaoOrdenada);
+
+      let arrayDeNumeros = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez' ];
+      for (let numero in arrayDeNumeros){
+        let itensDaLista = document.createElement('li');
+        itensDaLista.innerHTML = arrayDeNumeros[numero];
+        listaNaoOrdenada.appendChild(itensDaLista);
+      }
+      //9
+      let elementoH31 = document.createElement('h3');
+      let elementoH32 = document.createElement('h3');
+      let elementoH33 = document.createElement('h3');
+      elementoMain.appendChild(elementoH31);
+      elementoMain.appendChild(elementoH32);
+      elementoMain.appendChild(elementoH33);
+
+      //  PARTE 2
+
+      //1
+      let title = document.querySelector('h1');
+      title.className = 'title';
+      //2
+      let description = document.getElementsByTagName('h3');
+      for(let i = 0; i < 3; i += 1){
+        description[i].className = 'decription';
+      }
+      //3
+      let removePasso5 = document.getElementsByClassName('left-content')[0];
+      elementoMain.removeChild(removePasso5);
+      //4
+      let alinhamento =  document.getElementsByClassName('right-content')[0];
+      alinhamento.style.marginRight='auto';
+      //5
+      let background = document.getElementsByClassName('center-content')[0];
+      background.style.backgroundColor='green';
+      //6
+      listaNaoOrdenada.lastChild.remove();
+      listaNaoOrdenada.lastChild.remove();
+    </script>
+  </body>
+</html>
